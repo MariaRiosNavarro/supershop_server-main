@@ -24,7 +24,7 @@ export async function deleteOneArticle(req, res) {
     //Wait & remove one movie
     const dbResponse = await dbo
       .collection("article")
-      .deleteOne({ _id: new ObjectId() });
+      .deleteOne({ _id: new ObjectId(id) });
     //No Response handling
     if (!dbResponse) {
       return res.status(404).json({ message: "Article not found" });
